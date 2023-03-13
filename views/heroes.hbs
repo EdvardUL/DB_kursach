@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</style>
+<body>
+    <div class="allusers">
+        <table style="margin-left:auto;margin-right:auto;">
+            <tr><th>Имя Героя</th><th>Фракция</th><th>Сторона</th><th>Статус</th></tr>
+            {{#each heroes}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.fraction}}</td>
+                <td>{{this.side}}</td>
+                <td>{{this.status}}</td>
+            </tr>
+            {{/each}} 
+        </table>
+    </div>
+</body>
+</html>

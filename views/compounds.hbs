@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление пользователя</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/style.css">
+    <style></style>
+</head>
+<body>
+    <div class="allusers">
+        <table style="margin-left:auto;margin-right:auto;">
+            <tr><th>Вид отряда</th><th>Тип отряда</th><th>Количество бойцов</th></tr>
+            {{#each compounds}}
+            <tr>
+                <td>{{this.unit_name}}</td>
+                <td>{{this.unit_type}}</td>
+                <td>{{this.num_unit}}</td>
+            </tr>
+            {{/each}} 
+        </table>
+    </div>
+</body>
+</html>

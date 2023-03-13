@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование Персонажа</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/style.css">
+    </head>
+<body>
+    <div class = "allusers">
+        <h1>Редактирование Армии</h1>
+        <form action="/edit_army" method="POST">
+            <input type="hidden" name="id" value="{{army.army_id}}" />
+            <label>Название армии</label><br>
+            <input name="army_name" value="{{army.army_name}}"/><br><br>
+            <label>Фракция</label><br>
+            <input name="faction" value="{{army.faction}}" /><br><br>
+            <label>Количество бойцов</label><br>
+            <input name="num_units" value="{{army.num_units}}"/><br><br>
+            <label>Очки армии</label><br>
+            <input name="points_total" value="{{army.points_total}}" /><br><br>
+            <input type="submit" value="Отправить" />
+        </form>
+        <a href="/armies">К списку армий</a>
+    </div>
+</body>

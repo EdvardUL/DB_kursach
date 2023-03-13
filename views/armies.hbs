@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="allusers">
+        <form action="create_army" method="GET">
+            <input type="submit" value="Add">
+        </form>
+        <form action="sort_armies" method="POST">
+            <input type="submit" value="Sort">
+        </form>
+        <form action="find_army" method="POST" style="display:inline;">
+            <input name="needble_name" type="text">
+            <input type="submit" value="Find">
+        </form>
+        <table>
+        <tr><th>Имя Армии</th><th>Фракция</th><th>Боевые единицы</th><th>Очки армии</th><th></th></tr>
+        {{#each army}}
+            <tr>
+                <td>{{this.army_name}}</td>
+                <td>{{this.faction}}</td>
+                <td>{{this.num_units}}</td>
+                <td>{{this.points_total}}</td>
+                <td>
+                    <form action="delete_army/{{this.army_id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+                <td>
+                    <form action="view_army/{{this.army_id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Просмотреть" />
+                    </form>                
+                </td>
+                <td>
+                    <form action="edit_army/{{this.army_id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Изменить">
+                    </form>
+                </td>
+                <td>
+                    <form action="compound/{{this.army_id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Подробнее" />
+                    </form>
+                    <form action="heroes/{{this.army_id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Герои" />
+                    </form>
+                </td>
+                <td>
+                    <form action="battlegrounds/{{this.army_id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="поля сражений">
+                    </form>
+                </td>
+            </tr>
+        {{/each}} 
+        </table>
+    </div>
+</body>
+</html>

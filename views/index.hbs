@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class = "allusers">
+        <img src = "images/Warhammer-logo.png" width="300" height="170">
+        <h1>Список пользователей</h1>
+        <form action="/create">
+            <button>Добавить пользователя</button>
+        </form>
+        <p></p>
+        <form action="/check">
+            <button>Авторизация</button>
+        </form>
+        <p><a href="/create">Добавить пользователя</a></p>
+        <p><a href="/check">Авторизация</a></p>
+        <table>
+            <tr><th>Name</th><th>Password</th><th>Fraction</th></tr>
+            {{#each users}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.user_password}}</td>
+                    <td>{{this.fraction}}</td>
+                    <td>
+                        <a href="/edit/{{this.id}}">Edit</a>|
+                        <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</body>
+<html>
