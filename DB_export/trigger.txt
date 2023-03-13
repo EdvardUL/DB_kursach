@@ -1,0 +1,3 @@
+CREATE TRIGGER `insert_user_stats` AFTER INSERT ON `Players`
+ FOR EACH ROW INSERT INTO Players_stats
+SELECT * FROM Players ORDER BY id DESC LIMIT 1
