@@ -7,12 +7,18 @@
 <body>
     <div class="allusers">
         <table style="margin-left:auto;margin-right:auto;">
-            <tr><th>Сегмент</th><th>Планета</th><th>Контроль</th></tr>
+            <tr><th>Сегмент</th><th>Планета</th><th>Контроль</th><th>Процент</th></tr>
             {{#each battlegrounds}}
             <tr>
                 <td>{{this.segment}}</td>
                 <td>{{this.planet}}</td>
                 <td>{{this.control_by}}</td>
+                <td>{{this.persent}}</td>
+                <td>
+                    <form action="create_xlsx/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="xlsx output" />
+                    </form>
+                </td>
             </tr>
             {{/each}} 
         </table>
